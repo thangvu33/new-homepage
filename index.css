@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    max-width: 1100px;
+    margin: auto;
+    padding-bottom: 4rem;
+    background-color:  hsl(36, 100%, 99%);
+}
+
+ul {
+    list-style-type: none;
+    
+}
+
+p {
+    line-height: 1.8;
+    color:  hsl(236, 13%, 42%); 
+}
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+}
+
+
+
+
+.header nav #menu-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1.25rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: auto;
+}
+
+.header nav {
+    opacity: 0;
+    z-index: -999999;
+}
+
+.header nav.open {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    width: 200px;
+    padding: 1.25rem;
+    opacity: 1;
+    z-index: 9999999;
+    animation: showMenu 0.2s ease;
+}
+
+
+.header nav ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header nav ul li {
+    margin: 1.5rem 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.header nav ul li:hover {
+    color: hsl(5, 85%, 63%);
+}
+
+.header .menu-button button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+   
+}
+
+.backdrop {
+    display: none; 
+    position: fixed;
+    background: black;
+    height: 100vh;
+    width: 100vh;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+}
+
+.backdrop.open {
+    display: block;
+}
+
+.showcase {
+    padding: 1.25rem;
+    padding-top: 0;
+
+}
+
+.showcase h1 {
+    font-size: 2rem;
+    color: hsl(240, 100%, 5%);
+    margin: 1rem 0;
+}
+
+.showcase div:first-child article p {
+    margin-bottom: 1rem;
+}
+
+.showcase div:first-child article button {
+    background-color: hsl(5, 85%, 63%);
+    padding: 0.8rem 2rem;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+.showcase div:first-child article button:hover {
+    background-color: hsl(240, 100%, 5%);
+    cursor: pointer;
+}
+
+.new {
+    background-color: hsl(240, 100%, 5%);
+    margin-top: 4rem;
+    padding: 1.25rem 1.25rem 0;
+}
+
+.new h2 {
+    color:  hsl(35, 77%, 62%);
+    margin-bottom: 1rem;
+}
+
+.new h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.new h3:hover {
+    color: hsl(35, 77%, 62%);
+    cursor: pointer;
+}
+
+.new article p {
+    color: hsl(36, 100%, 99%);
+}
+.new article {
+    padding: 1rem 0;
+}
+.new article:not(:last-child) {
+    border-bottom: 1px solid  hsl(236, 13%, 42%);
+    
+}
+
+.cards {
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+}
+
+.cards article {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.cards article img {
+    width: 150px;
+}
+.cards article span {
+    color: hsl(236, 13%, 42%);
+    font-weight: bold;
+    font-size: 2rem;
+    opacity: 75%;
+}
+
+.cards article h4 {
+    font-size: 1.25rem;
+    color: hsl(240, 100%, 5%);
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.cards article h4:hover {
+    color: hsl(5, 85%, 63%);
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        padding: 2rem 1.25rem;
+    }
+    .header nav {
+        opacity: 1;
+        z-index: auto;
+        width: 100%;
+    }
+
+    .header nav.open {
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        z-index: auto;
+        width: 100%;
+    }
+
+    .header nav #menu-close {
+        display: none;
+    }
+
+    .header nav ul {
+        position: relative;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+        transform: translateY(0%);
+    }
+
+    .header nav ul li {
+        margin: 0;
+    }
+
+    .header .menu-button button {
+        display: none;
+    }
+
+   
+
+    .backdrop.backdrop.open {
+        display: none;
+    }
+
+    .showcase {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .showcase div:first-child article {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2rem;
+    }
+
+    .showcase > .new {
+        margin-top: 0;
+    }
+    
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@keyframes showMenu {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
